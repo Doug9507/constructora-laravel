@@ -73,11 +73,11 @@
             </v-card-title>
             <v-data-table
                 :headers="headers"
-                :items="desserts"
+                :items="proyectos"
                 :search="search"
             ></v-data-table>
             </v-card>
             </v-app> 
-        </div>
+    </div>
 </div>
 @endsection

@@ -69,7 +69,6 @@
 @endsection
 
 @section('scripts')
-<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 function modal(project){

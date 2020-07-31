@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Constructora YAVARI</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -29,7 +29,7 @@
 }
 </style>
 <body>
-    <div id="app">
+    <div>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -94,6 +94,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @yield('scripts')
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -110,7 +111,7 @@
                          console.log(response.data.data);
                          
                          this.lista.forEach(element => {
-                             this.desserts.push({
+                             this.proyectos.push({
                                  id:element.id,
                                  proyecto:element.project.nombre_proyecto,
                                  toperacion:element.tipo_operacion,
@@ -152,13 +153,13 @@
                         
                         
 					],
-					desserts: [
+					proyectos: [
 					],
 				};
 			},
 		});
 	</script>
-    <script type="module">
+<script type="module">
 import calculo from "{{asset('js/calculo.js')}}";
 const app = new Vue({
     el: '#app-items',

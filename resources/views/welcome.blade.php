@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Constructora YAVARI</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap" rel="stylesheet">
@@ -66,7 +66,13 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+
+@media screen and (max-width: 480px) {
+    .title {
+                font-size: 40px;
+            }
+}
+</style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
