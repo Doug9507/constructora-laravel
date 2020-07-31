@@ -105,7 +105,7 @@
 
 @section('scripts')
 <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-<script type="module">
+<!-- <script type="module">
 import calculo from "{{asset('js/calculo.js')}}";
 const app = new Vue({
     el: '#app-items',
@@ -115,5 +115,5 @@ const app = new Vue({
       calculo,
     }
   })
-</script>
+</script> -->
 @endsection

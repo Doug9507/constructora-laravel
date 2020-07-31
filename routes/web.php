@@ -23,10 +23,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('projects','Backend\ProjectController')->middleware('auth')->except('show');
 Route::resource('items','Backend\ItemController')->middleware('auth')->except('show');
+
 Route::get('indexId/{project}','Backend\ItemController@indexId')->middleware('auth')->name('items.indexId');
 Route::get('indexCall','Backend\ItemController@indexCall')->middleware('auth')->name('items.indexCall');
 Route::get('createItem/{project}','Backend\ItemController@createItem')->middleware('auth')->name('items.createItem');
-Route::get('exportarPdf','Backend\ItemController@exportarPdf')->middleware('auth')->name('items.exportarPdf');
+
+Route::get('exportarItemPdf','Backend\ItemController@exportarItemPdf')->middleware('auth')->name('items.exportarItemPdf');
 Route::get('exportarPdf','Backend\ProjectController@exportarPdf')->middleware('auth')->name('projects.exportarPdf');
 
 

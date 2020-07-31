@@ -10,7 +10,7 @@ use Barryvdh\DomPDF\Facade as PDF;
 
 class ItemController extends Controller
 {
-    public function exportarPdf()
+    public function exportarItemPdf()
     {
         $items = Item::with('project')->latest()->get();
         $pdf = PDF::loadView('reportes.items',compact('items'));

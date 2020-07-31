@@ -29,7 +29,7 @@
 }
 </style>
 <body>
-    <div>
+    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -158,4 +158,15 @@
 			},
 		});
 	</script>
+    <script type="module">
+import calculo from "{{asset('js/calculo.js')}}";
+const app = new Vue({
+    el: '#app-items',
+    data: {
+    },
+    components:{
+      calculo,
+    }
+  })
+</script>
 </html>

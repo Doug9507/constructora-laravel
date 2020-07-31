@@ -56,7 +56,7 @@
             {{$items->links()}}
         </div>
     </div> -->
-    <a href="{{route('items.exportarPdf')}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte</a>
+    <a href="{{route('items.exportarItemPdf')}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte</a>
     <div id="tabla">
          <v-app id="inspire">
             <v-card>
