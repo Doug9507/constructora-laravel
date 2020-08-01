@@ -37,6 +37,7 @@ class ItemRequest extends FormRequest
         return [
                     'tipo_operacion.required' => 'Debe ingresar un tipo de operacion...',
                     'fecha_registro.required' => 'Debe ingresar una fecha de registro...',
+                    'descripcion.required' => 'Debe ingresar una fecha de registro...',
                     'tipo_recurso.required' => 'Debe ingresar un tipo de recurso...',
                     'proveedor.required' => 'Debe ingresar un proveedor...',
                     'tipo_comprobante.required' => 'Debe ingresar una fecha de inici tipo de comprobante...',

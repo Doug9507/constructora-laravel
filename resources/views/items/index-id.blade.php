@@ -4,7 +4,6 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
-    <a href="{{route('items.exportarItemIdPdf',$project)}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte de E/S</a>
             <div class="card mb-2">
               <div class="card-body text-center">
                <div>
@@ -13,6 +12,7 @@
                </div>
                Saldo Contable : <strong>{{$project->saldo_contable}}</strong>
                </div>
+    <a href="{{route('items.exportarIdPdf',$project)}}" target="_blank" class="btn btn-sm btn-primary my-2">Reporte de E/S</a>
               </div>
             </div>
             <div class="card mb-2">

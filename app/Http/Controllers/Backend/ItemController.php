@@ -19,9 +19,11 @@ class ItemController extends Controller
         // return $pdf->download('items-list.pdf');
         return $pdf->setPaper('a3','landscape')->stream('items-list.pdf');
     }
-    public function exportarItemIdPdf(Project $project)
+    public function exportarIdPdf(Project $project)
     {
-        $items = Item::where('project_id',$project->id)->latest()->paginate(4);
+        $items = Item::where('project_id',$project->id)->get();
+
+        // dd($itemes->all());
 
         $pdf = PDF::loadView('reportes.items-id',compact('items','project'));
 
