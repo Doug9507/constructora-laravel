@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
-    <a href="{{route('projects.exportarPdf')}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte</a>
+    <a href="{{route('projects.exportarPdf')}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte de Obras</a>
             <div class="card mb-2">
                 <div class="card-header">Lista de Obras <a href="{{route('projects.create')}}" class="btn btn-sm btn-outline-success float-right">Crear Obra</a></div>
 

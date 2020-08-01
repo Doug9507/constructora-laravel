@@ -4,6 +4,7 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-12">
+    <a href="{{route('items.exportarItemIdPdf',$project)}}" target="_blank" class="btn btn-sm btn-primary mb-2">Reporte de E/S</a>
             <div class="card mb-2">
               <div class="card-body text-center">
                <div>

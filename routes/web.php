@@ -29,6 +29,7 @@ Route::get('indexCall','Backend\ItemController@indexCall')->middleware('auth')->
 Route::get('createItem/{project}','Backend\ItemController@createItem')->middleware('auth')->name('items.createItem');
 
 Route::get('exportarItemPdf','Backend\ItemController@exportarItemPdf')->middleware('auth')->name('items.exportarItemPdf');
+Route::get('exportarItemIdPdf','Backend\ItemController@exportarItemIdPdf')->middleware('auth')->name('items.exportarItemIdPdf');
 Route::get('exportarPdf','Backend\ProjectController@exportarPdf')->middleware('auth')->name('projects.exportarPdf');
 
 

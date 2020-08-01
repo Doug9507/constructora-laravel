@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Project;
 use App\Item;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
+use App\Http\Requests\ItemRequest;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class ItemController extends Controller
@@ -18,6 +19,15 @@ class ItemController extends Controller
         // return $pdf->download('items-list.pdf');
         return $pdf->setPaper('a3','landscape')->stream('items-list.pdf');
     }
+    public function exportarItemIdPdf(Project $project)
+    {
+        $items = Item::where('project_id',$project->id)->latest()->paginate(4);
+
+        $pdf = PDF::loadView('reportes.items-id',compact('items','project'));
+
+        // return $pdf->download('items-list.pdf');
+        return $pdf->setPaper('a3','landscape')->stream('items-id-list.pdf');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +39,7 @@ class ItemController extends Controller
         
         // $items = Item::latest()->paginate();
 
-        $items = Item::with('project')->latest()->paginate(5);
+        $items = Item::with('project')->latest()->paginate(4);
         // $projects = Project::all();
         // $projects->load('items');
 
@@ -45,7 +55,7 @@ class ItemController extends Controller
 
     public function indexId(Project $project)
     {
-        $items = Item::where('project_id',$project->id)->latest()->paginate(3);
+        $items = Item::where('project_id',$project->id)->latest()->paginate(4);
 
         return view('items.index-id',compact('items','project'));
     }
@@ -71,7 +81,7 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
         // dd($request->all());
 
@@ -120,7 +130,7 @@ class ItemController extends Controller
      * @param  \App\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Item $item)
+    public function update(ItemRequest $request, Item $item)
     {
         $item->update($request->all());
         $item->save();
